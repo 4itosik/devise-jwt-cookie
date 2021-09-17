@@ -50,7 +50,7 @@ module Devise
         def validate_options!
           if same_site.present?
             raise 'If same_site is set to None, the cookie must be secure' if same_site == 'None' && !secure
-            raise 'Invalid value for same_site, should be one of None, Lax or Strict' if !['None', 'Lax', 'Strict'].includes?(same_site)
+            raise 'Invalid value for same_site, should be one of None, Lax or Strict' if !['None', 'Lax', 'Strict'].include?(same_site)
           end
         end
       end
