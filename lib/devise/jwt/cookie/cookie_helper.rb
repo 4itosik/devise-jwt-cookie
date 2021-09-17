@@ -52,6 +52,7 @@ module Devise
             raise 'If same_site is set to None, the cookie must be secure' if same_site == 'None' && !secure
             raise 'Invalid value for same_site, should be one of None, Lax or Strict' if !['None', 'Lax', 'Strict'].includes?(same_site)
           end
+        end
       end
     end
   end
