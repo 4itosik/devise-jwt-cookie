@@ -16,6 +16,7 @@ module Devise
 
         def authenticate!
           # FIXME support aud
+          env['devise.skip_trackable'.freeze] = true if self.valid?
           aud = nil
           user = Warden::JWTAuth::UserDecoder.new.call(token, scope, aud)
           success!(user)
